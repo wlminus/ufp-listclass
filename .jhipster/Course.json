@@ -1,0 +1,42 @@
+{
+  "name": "Course",
+  "fields": [
+    {
+      "fieldName": "courseCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "maxSlot",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "schedule",
+      "otherEntityRelationshipName": "course",
+      "relationshipName": "schedule"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "subject",
+      "otherEntityRelationshipName": "courses",
+      "relationshipName": "subject",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20191209170810",
+  "entityTableName": "course",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

@@ -1,0 +1,51 @@
+{
+  "name": "Subject",
+  "fields": [
+    {
+      "fieldName": "subjectCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "subjectName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "subjectType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "creditValue",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "desc",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "department",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "course",
+      "otherEntityRelationshipName": "subject",
+      "relationshipName": "courses"
+    }
+  ],
+  "changelogDate": "20191209170808",
+  "entityTableName": "subject",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

@@ -1,0 +1,30 @@
+entity Subject {
+    subjectCode String,
+    subjectName String,
+    subjectType String,
+    creditValue String
+    desc String,
+    department String,
+    status String
+}
+
+entity Schedule {
+	weekValue String,
+    weekDayValue String,
+    periodValue String,
+    location String
+}
+
+entity Course {
+	courseCode String,
+    maxSlot Long,
+    status String
+}
+
+relationship OneToMany {
+	Subject{courses} to Course{subject}
+}
+
+relationship OneToMany {
+	Course{schedule} to Schedule
+}
