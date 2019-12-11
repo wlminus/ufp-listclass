@@ -63,21 +63,17 @@ public class Schedule implements Serializable {
         return weekValue;
     }
 
-    public void setWeekValue(String weekValue) {
-        this.weekValue = weekValue;
-    }
-
     public Schedule weekValue(String weekValue) {
         this.weekValue = weekValue;
         return this;
     }
 
-    public String getWeekDayValue() {
-        return weekDayValue;
+    public void setWeekValue(String weekValue) {
+        this.weekValue = weekValue;
     }
 
-    public void setWeekDayValue(String weekDayValue) {
-        this.weekDayValue = weekDayValue;
+    public String getWeekDayValue() {
+        return weekDayValue;
     }
 
     public Schedule weekDayValue(String weekDayValue) {
@@ -85,12 +81,12 @@ public class Schedule implements Serializable {
         return this;
     }
 
-    public String getPeriodValue() {
-        return periodValue;
+    public void setWeekDayValue(String weekDayValue) {
+        this.weekDayValue = weekDayValue;
     }
 
-    public void setPeriodValue(String periodValue) {
-        this.periodValue = periodValue;
+    public String getPeriodValue() {
+        return periodValue;
     }
 
     public Schedule periodValue(String periodValue) {
@@ -98,12 +94,12 @@ public class Schedule implements Serializable {
         return this;
     }
 
-    public String getLocation() {
-        return location;
+    public void setPeriodValue(String periodValue) {
+        this.periodValue = periodValue;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public String getLocation() {
+        return location;
     }
 
     public Schedule location(String location) {
@@ -111,19 +107,23 @@ public class Schedule implements Serializable {
         return this;
     }
 
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
     public Course getCourse() {
         return course;
-    }
-    // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
-
-    public void setCourse(Course course) {
-        this.course = course;
     }
 
     public Schedule course(Course course) {
         this.course = course;
         return this;
     }
+
+    public void setCourse(Course course) {
+        this.course = course;
+    }
+    // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
     @Override
     public boolean equals(Object o) {
@@ -151,4 +151,6 @@ public class Schedule implements Serializable {
             ", location='" + getLocation() + "'" +
             "}";
     }
+
+
 }

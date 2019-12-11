@@ -74,21 +74,17 @@ public class Subject implements Serializable {
         return subjectCode;
     }
 
-    public void setSubjectCode(String subjectCode) {
-        this.subjectCode = subjectCode;
-    }
-
     public Subject subjectCode(String subjectCode) {
         this.subjectCode = subjectCode;
         return this;
     }
 
-    public String getSubjectName() {
-        return subjectName;
+    public void setSubjectCode(String subjectCode) {
+        this.subjectCode = subjectCode;
     }
 
-    public void setSubjectName(String subjectName) {
-        this.subjectName = subjectName;
+    public String getSubjectName() {
+        return subjectName;
     }
 
     public Subject subjectName(String subjectName) {
@@ -96,12 +92,12 @@ public class Subject implements Serializable {
         return this;
     }
 
-    public String getSubjectType() {
-        return subjectType;
+    public void setSubjectName(String subjectName) {
+        this.subjectName = subjectName;
     }
 
-    public void setSubjectType(String subjectType) {
-        this.subjectType = subjectType;
+    public String getSubjectType() {
+        return subjectType;
     }
 
     public Subject subjectType(String subjectType) {
@@ -109,12 +105,12 @@ public class Subject implements Serializable {
         return this;
     }
 
-    public String getCreditValue() {
-        return creditValue;
+    public void setSubjectType(String subjectType) {
+        this.subjectType = subjectType;
     }
 
-    public void setCreditValue(String creditValue) {
-        this.creditValue = creditValue;
+    public String getCreditValue() {
+        return creditValue;
     }
 
     public Subject creditValue(String creditValue) {
@@ -122,12 +118,12 @@ public class Subject implements Serializable {
         return this;
     }
 
-    public String getDesc() {
-        return desc;
+    public void setCreditValue(String creditValue) {
+        this.creditValue = creditValue;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public String getDesc() {
+        return desc;
     }
 
     public Subject desc(String desc) {
@@ -135,12 +131,12 @@ public class Subject implements Serializable {
         return this;
     }
 
-    public String getDepartment() {
-        return department;
+    public void setDesc(String desc) {
+        this.desc = desc;
     }
 
-    public void setDepartment(String department) {
-        this.department = department;
+    public String getDepartment() {
+        return department;
     }
 
     public Subject department(String department) {
@@ -148,12 +144,12 @@ public class Subject implements Serializable {
         return this;
     }
 
-    public String getStatus() {
-        return status;
+    public void setDepartment(String department) {
+        this.department = department;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public String getStatus() {
+        return status;
     }
 
     public Subject status(String status) {
@@ -161,19 +157,18 @@ public class Subject implements Serializable {
         return this;
     }
 
-    public Set<Course> getCourses() {
-        return courses;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
-    public void setCourses(Set<Course> courses) {
-        this.courses = courses;
+    public Set<Course> getCourses() {
+        return courses;
     }
 
     public Subject courses(Set<Course> courses) {
         this.courses = courses;
         return this;
     }
-    // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
     public Subject addCourses(Course course) {
         this.courses.add(course);
@@ -186,6 +181,11 @@ public class Subject implements Serializable {
         course.setSubject(null);
         return this;
     }
+
+    public void setCourses(Set<Course> courses) {
+        this.courses = courses;
+    }
+    // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
     @Override
     public boolean equals(Object o) {

@@ -41,7 +41,7 @@
   "changelogDate": "20191209170808",
   "entityTableName": "subject",
   "dto": "no",
-  "pagination": "no",
+  "pagination": "pagination",
   "service": "no",
   "jpaMetamodelFiltering": false,
   "fluentMethods": true,

@@ -54,21 +54,17 @@ public class Course implements Serializable {
         return courseCode;
     }
 
-    public void setCourseCode(String courseCode) {
-        this.courseCode = courseCode;
-    }
-
     public Course courseCode(String courseCode) {
         this.courseCode = courseCode;
         return this;
     }
 
-    public Long getMaxSlot() {
-        return maxSlot;
+    public void setCourseCode(String courseCode) {
+        this.courseCode = courseCode;
     }
 
-    public void setMaxSlot(Long maxSlot) {
-        this.maxSlot = maxSlot;
+    public Long getMaxSlot() {
+        return maxSlot;
     }
 
     public Course maxSlot(Long maxSlot) {
@@ -76,12 +72,12 @@ public class Course implements Serializable {
         return this;
     }
 
-    public String getStatus() {
-        return status;
+    public void setMaxSlot(Long maxSlot) {
+        this.maxSlot = maxSlot;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public String getStatus() {
+        return status;
     }
 
     public Course status(String status) {
@@ -89,12 +85,12 @@ public class Course implements Serializable {
         return this;
     }
 
-    public Set<Schedule> getSchedules() {
-        return schedules;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
-    public void setSchedules(Set<Schedule> schedules) {
-        this.schedules = schedules;
+    public Set<Schedule> getSchedules() {
+        return schedules;
     }
 
     public Course schedules(Set<Schedule> schedules) {
@@ -114,17 +110,21 @@ public class Course implements Serializable {
         return this;
     }
 
-    public Subject getSubject() {
-        return subject;
+    public void setSchedules(Set<Schedule> schedules) {
+        this.schedules = schedules;
     }
 
-    public void setSubject(Subject subject) {
-        this.subject = subject;
+    public Subject getSubject() {
+        return subject;
     }
 
     public Course subject(Subject subject) {
         this.subject = subject;
         return this;
+    }
+
+    public void setSubject(Subject subject) {
+        this.subject = subject;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

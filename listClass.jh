@@ -28,3 +28,5 @@ relationship OneToMany {
 relationship OneToMany {
 	Course{schedule} to Schedule
 }
+
+paginate Course, Schedule, Subject with pagination

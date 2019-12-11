@@ -90,7 +90,7 @@ public class MigrateResource {
     public String migrateClass() throws IOException {
         System.out.println("Start Read TKB");
 
-        FileInputStream inputStream = new FileInputStream(new File("listClass700.xlsx"));
+        FileInputStream inputStream = new FileInputStream(new File("dataClass.xlsx"));
         XSSFWorkbook workbook = new XSSFWorkbook(inputStream);
         XSSFSheet sheet = workbook.getSheetAt(0);
 
@@ -108,6 +108,7 @@ public class MigrateResource {
             if (row.getRowNum() <= 2) {
                 continue;
             }
+            System.out.println("Row --- " + row.getRowNum());
 
             String MaHocPhan = row.getCell(5).getStringCellValue();
             double MaLop = row.getCell(3).getNumericCellValue();
@@ -156,11 +157,16 @@ public class MigrateResource {
                     periodValue = "NULL";
                 } else {
                     int tietBatDau = Integer.parseInt(row.getCell(11).getStringCellValue());
-                    int tietKetThuc = Integer.parseInt(row.getCell(12).getStringCellValue());
-                    for (int i = tietBatDau; i <= tietKetThuc; i++) {
-                        periodValue = periodValue + i + ",";
+                    System.out.println(tietBatDau);
+                    if (tietBatDau > 13) {
+                        periodValue = row.getCell(11).getStringCellValue() + "-" + row.getCell(12).getStringCellValue();
+                    } else {
+                        int tietKetThuc = Integer.parseInt(row.getCell(12).getStringCellValue());
+                        for (int i = tietBatDau; i <= tietKetThuc; i++) {
+                            periodValue = periodValue + i + ",";
+                        }
+                        periodValue = periodValue.substring(0, periodValue.length() - 1);
                     }
-                    periodValue = periodValue.substring(0, periodValue.length() - 1);
                 }
 
                 String location = row.getCell(15).getStringCellValue();
@@ -201,13 +207,18 @@ public class MigrateResource {
                         periodValue = "NULL";
                     } else {
                         int tietBatDau = Integer.parseInt(row.getCell(11).getStringCellValue());
-                        int tietKetThuc = Integer.parseInt(row.getCell(12).getStringCellValue());
-                        for (int i = tietBatDau; i <= tietKetThuc; i++) {
-                            periodValue = periodValue + i + ",";
+                        System.out.println(tietBatDau);
+                        if (tietBatDau > 13) {
+                            periodValue = row.getCell(11).getStringCellValue() + "-" + row.getCell(12).getStringCellValue();
+                        } else {
+                            int tietKetThuc = Integer.parseInt(row.getCell(12).getStringCellValue());
+                            for (int i = tietBatDau; i <= tietKetThuc; i++) {
+                                periodValue = periodValue + i + ",";
+                            }
+                            periodValue = periodValue.substring(0, periodValue.length() - 1);
                         }
-                        periodValue = periodValue.substring(0, periodValue.length() - 1);
                     }
-                    periodValue = periodValue.substring(0, periodValue.length() - 1);
+
                     String location = row.getCell(15).getStringCellValue();
 
                     Schedule tmpSchedule = new Schedule(weekValue, weekDayValue, periodValue, location);
@@ -217,12 +228,22 @@ public class MigrateResource {
                     String weekValue = formatWeekValue(row.getCell(14).getStringCellValue());
                     String weekDayValue = row.getCell(9).getStringCellValue();
                     String periodValue = "";
-                    int tietBatDau = Integer.parseInt(row.getCell(11).getStringCellValue());
-                    int tietKetThuc = Integer.parseInt(row.getCell(12).getStringCellValue());
-                    for (int i = tietBatDau; i <= tietKetThuc; i++) {
-                        periodValue = periodValue + i + ",";
+                    if (row.getCell(11).getStringCellValue().equals("NULL")) {
+                        periodValue = "NULL";
+                    } else {
+                        int tietBatDau = Integer.parseInt(row.getCell(11).getStringCellValue());
+                        System.out.println(tietBatDau);
+                        if (tietBatDau > 13) {
+                            periodValue = row.getCell(11).getStringCellValue() + "-" + row.getCell(12).getStringCellValue();
+                        } else {
+                            int tietKetThuc = Integer.parseInt(row.getCell(12).getStringCellValue());
+                            for (int i = tietBatDau; i <= tietKetThuc; i++) {
+                                periodValue = periodValue + i + ",";
+                            }
+                            periodValue = periodValue.substring(0, periodValue.length() - 1);
+                        }
                     }
-                    periodValue = periodValue.substring(0, periodValue.length() - 1);
+
                     String location = row.getCell(15).getStringCellValue();
 
                     Schedule tmpSchedule = new Schedule(weekValue, weekDayValue, periodValue, location);
