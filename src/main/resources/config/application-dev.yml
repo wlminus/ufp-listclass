@@ -23,7 +23,7 @@ spring:
   profiles:
     active: dev
     include:
-      - swagger
+      #      - swagger
       - no-liquibase
       # Uncomment to activate TLS for the dev profile
       #- tls
@@ -68,7 +68,7 @@ spring:
     cache: false
 
 server:
-  port: 9721
+  port: 6621
 
 # ===================================================================
 # JHipster specific properties
@@ -85,7 +85,7 @@ jhipster:
     allowed-origins: '*'
     allowed-methods: '*'
     allowed-headers: '*'
-    exposed-headers: 'Authorization,Link,X-Total-Count'
+    exposed-headers: 'Authorization,Link,X-Total-Count,AppToken'
     allow-credentials: true
     max-age: 1800
   security:

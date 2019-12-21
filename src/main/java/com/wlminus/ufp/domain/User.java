@@ -1,8 +1,7 @@
 package com.wlminus.ufp.domain;
 
-import com.wlminus.ufp.config.Constants;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.wlminus.ufp.config.Constants;
 import org.apache.commons.lang3.StringUtils;
 import org.hibernate.annotations.BatchSize;
 import org.hibernate.annotations.Cache;
@@ -23,7 +22,7 @@ import java.util.Set;
  * A user.
  */
 @Entity
-@Table(name = "jhi_user")
+@Table(name = "fp_user")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class User extends AbstractAuditingEntity implements Serializable {
 
@@ -87,7 +86,7 @@ public class User extends AbstractAuditingEntity implements Serializable {
     @JsonIgnore
     @ManyToMany
     @JoinTable(
-        name = "jhi_user_authority",
+        name = "fp_user_authority",
         joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")},
         inverseJoinColumns = {@JoinColumn(name = "authority_name", referencedColumnName = "name")})
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)

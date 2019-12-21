@@ -30,6 +30,9 @@ public class Course implements Serializable {
     @Column(name = "max_slot")
     private Long maxSlot;
 
+    @Column(name = "current_slot")
+    private Long currentSlot;
+
     @Column(name = "status")
     private String status;
 
@@ -74,6 +77,19 @@ public class Course implements Serializable {
 
     public void setMaxSlot(Long maxSlot) {
         this.maxSlot = maxSlot;
+    }
+
+    public Long getCurrentSlot() {
+        return currentSlot;
+    }
+
+    public void setCurrentSlot(Long currentSlot) {
+        this.currentSlot = currentSlot;
+    }
+
+    public Course currentSlot(Long currentSlot) {
+        this.currentSlot = currentSlot;
+        return this;
     }
 
     public String getStatus() {
@@ -150,6 +166,7 @@ public class Course implements Serializable {
             "id=" + getId() +
             ", courseCode='" + getCourseCode() + "'" +
             ", maxSlot=" + getMaxSlot() +
+            ", currentSlot=" + getCurrentSlot() +
             ", status='" + getStatus() + "'" +
             "}";
     }
