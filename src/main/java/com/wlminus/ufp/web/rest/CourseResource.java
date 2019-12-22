@@ -98,6 +98,15 @@ public class CourseResource {
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
 
+
+    @GetMapping("/courses/search/{query}")
+    public ResponseEntity<List<Course>> search(@PathVariable String query, Pageable pageable) {
+        log.debug("REST request to get a page of Courses");
+        Page<Course> page = courseRepository.searchCourse(query, pageable);
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
+        return ResponseEntity.ok().headers(headers).body(page.getContent());
+    }
+
     /**
      * {@code GET  /courses/:id} : get the "id" course.
      *
